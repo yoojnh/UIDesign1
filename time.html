@@ -1,32 +1,84 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="utf-8">
-  <title>현재 시간</title>
+  <title>Jinho Yoo's [UI Design Programming 1] Page</title>
+  <meta charset="utf-8" />
+
+  <!-- Google Fonts 불러오기 -->
+  <link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=Ballet&family=Press+Start+2P&family=Stick+No+Bills&display=swap" rel="stylesheet">
+
   <style>
-    #clock {
+    body {
       font-family: Helvetica, sans-serif;
-      font-size: 24px;
+      margin: 40px;
+      line-height: 1.5;
+    }
+
+    #clock {
+      font-size: 80px;
       font-weight: bold;
       margin: 20px 0;
+      letter-spacing: 2px;
+    }
+
+    /* 개별 숫자에 적용될 서체 클래스 */
+    .f1 { font-family: 'Silkscreen', sans-serif; }
+    .f2 { font-family: 'Ballet', serif; }
+    .f3 { font-family: 'Baskerville', sans-serif; }
+    .f4 { font-family: 'Press Start 2P', cursive; }
+    .f5 { font-family: 'Helvetica', cursive; }
+    .f6 { font-family: 'Stick No Bills', sans-serif; }
+
+    a.button {
+      display: inline-block;
+      margin: 5px 0;
+      background-color: #f0f0f0;
+      color: #333;
+      text-decoration: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    a.button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .desc {
+      margin-bottom: 10px;
     }
   </style>
 </head>
+
 <body>
 
-  <div id="clock">--:--:--</div>
+  <h1>Archiving...</h1>
+
+  <div id="clock">
+    <span id="h1" class="f1">0</span><span id="h2" class="f2">0</span> :
+    <span id="m1" class="f3">0</span><span id="m2" class="f4">0</span> :
+    <span id="s1" class="f5">0</span><span id="s2" class="f6">0</span>
+  </div>
 
   <script>
     function updateClock() {
       const now = new Date();
-      const hours = String(now.getHours()).padStart(2, '0');
-      const minutes = String(now.getMinutes()).padStart(2, '0');
-      const seconds = String(now.getSeconds()).padStart(2, '0');
-      document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+      const h = now.getHours().toString().padStart(2, '0');
+      const m = now.getMinutes().toString().padStart(2, '0');
+      const s = now.getSeconds().toString().padStart(2, '0');
+
+      document.getElementById('h1').textContent = h[0];
+      document.getElementById('h2').textContent = h[1];
+      document.getElementById('m1').textContent = m[0];
+      document.getElementById('m2').textContent = m[1];
+      document.getElementById('s1').textContent = s[0];
+      document.getElementById('s2').textContent = s[1];
     }
 
     setInterval(updateClock, 1000);
-    updateClock(); // 페이지 로드 시 바로 시간 표시
+    updateClock();
   </script>
 
 </body>
