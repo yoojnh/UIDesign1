@@ -1,10 +1,36 @@
-  
 <!DOCTYPE html>
 <html>
 
 <head>
   <title>[Jinho Yoo] | UI Design Programming 1</title>
   <meta charset="utf-8" />
+  <style>
+    body {
+      font-family: Helvetica, sans-serif;
+      margin: 20px;
+    }
+
+    a.button {
+      display: inline-block;
+      padding: 8px 16px;
+      margin: 5px 0;
+      background-color: #f0f0f0;
+      color: #333;
+      text-decoration: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    a.button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .desc {
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 
 <body>
@@ -14,21 +40,21 @@
     <div id="left-column" class="scroll"> 
       <!-- about me-->
       <h1>[Jinho Yoo]</h1>  
-      <p class="desc">Its 2AM in the morning right now...</p>
+      <p class="desc">It's 2AM in the morning right now...</p>
       <ul>
         <li>My favorite food is Sushi</li>
-        <li>My favorite song is Karri- Lemonade</li>
-        <li>My favorite website is <a href="https://olafureliasson.net/uncertain">Olafur Eliasson</a></li>
+        <li>My favorite song is Karri - Lemonade</li>
+        <li>My favorite website is <a class="button" href="https://olafureliasson.net/uncertain">Olafur Eliasson</a></li>
       </ul>
-
     </div>
   </div>
 
   <h3>Exercises</h3>
   <ul>
-        <li><a href="ascii/exterior-jinhoyoo.html">ASCII TOWN</a></li>
-        <li><a href="coding_from_life/coding_from_life.html">CODING FROM LIFE</a></li>
-        <li>Project 1 Link > <a href="https://www.figma.com/design/k4UPN5Kb1LD40NsFPOCsM3/Jinho-Yoo_Apple-Music?node-id=0-1&t=9FxWlZ5s655QAeHZ-1">TuneFrame</a></li>
-  <ul>
+    <li><a class="button" href="ascii/exterior-jinhoyoo.html">ASCII TOWN</a></li>
+    <li><a class="button" href="coding_from_life/coding_from_life.html">CODING FROM LIFE</a></li>
+    <li><a class="button" href="https://www.figma.com/design/k4UPN5Kb1LD40NsFPOCsM3/Jinho-Yoo_Apple-Music?node-id=0-1&t=9FxWlZ5s655QAeHZ-1">TuneFrame</a></li>
+  </ul>
+
 </body>
 </html>
