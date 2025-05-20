@@ -2,17 +2,18 @@
 <html>
 
 <head>
-  <title>[Jinho Yoo] | UI Design Programming 1</title>
+  <title>Jinho Yoo's [UI Design Programming 1] Page</title>
   <meta charset="utf-8" />
   <style>
     body {
       font-family: Helvetica, sans-serif;
-      margin: 20px;
+      margin: 10px;
+      line-height: 1.2
     }
 
     a.button {
       display: inline-block;
-      padding: 8px 16px;
+/*      padding: 8px 16px;*/
       margin: 5px 0;
       background-color: #f0f0f0;
       color: #333;
@@ -30,31 +31,50 @@
     .desc {
       margin-bottom: 10px;
     }
+
+    #clock {
+      font-size: 300px;
+      font-weight: bold;
+      margin: 5px 0;
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- this is where my code is-->
   <div id="grid">
     <div id="left-column" class="scroll"> 
-      <!-- about me-->
-      <h1>[Jinho Yoo]</h1>  
-      <p class="desc">It's 2AM in the morning right now...</p>
+      <h1>Archiving...</h1>
+      <div id="clock"></div> <!-- 현재 시간 표시될 자리 -->
+      <p class="desc">Hi, welcome to Jinho Yoo's webpage.</p>
       <ul>
-        <li>My favorite food is Sushi</li>
-        <li>My favorite song is Karri - Lemonade</li>
-        <li>My favorite website is <a class="button" href="https://olafureliasson.net/uncertain">Olafur Eliasson</a></li>
+        <li>Graphic / Photo +</li>
+        <li>Navigating life by translating various observations and experiences from everyday life into tangible forms.</li>
+        <li>Wish to code a webpage like this someday... <a class="button" href="https://olafureliasson.net/uncertain">Olafur Eliasson</a></li>
       </ul>
     </div>
   </div>
 
   <h3>Exercises</h3>
   <ul>
-    <li><a class="button" href="ascii/exterior-jinhoyoo.html">ASCII TOWN</a></li>
-    <li><a class="button" href="coding_from_life/coding_from_life.html">CODING FROM LIFE</a></li>
+    <li><a class="button" href="ascii/exterior-jinhoyoo.html">Ascii Town</a></li>
+    <li><a class="button" href="coding_from_life/coding_from_life.html">Coding from life</a></li>
     <li><a class="button" href="https://www.figma.com/design/k4UPN5Kb1LD40NsFPOCsM3/Jinho-Yoo_Apple-Music?node-id=0-1&t=9FxWlZ5s655QAeHZ-1">TuneFrame</a></li>
   </ul>
+
+  <!-- 스크립트는 body 맨 아래에 -->
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock(); // 첫 실행
+  </script>
 
 </body>
 </html>
